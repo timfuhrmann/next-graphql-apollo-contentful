@@ -11,7 +11,7 @@ const LinkWrapper = styled.button`
 
 const LinkFrame = styled.div`
     position: relative;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.75s ${p => p.theme.ease};
     will-change: transform;
 
     &::after {

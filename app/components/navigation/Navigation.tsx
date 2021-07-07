@@ -9,9 +9,7 @@ const NavigationWrapper = styled.div`
     padding: 3rem 0;
 `;
 
-const NavigationContent = styled(Content)`
-    width: 100%;
-`;
+const NavigationContent = styled(Content)``;
 
 const NavigationInner = styled.div`
     display: flex;
@@ -19,9 +17,12 @@ const NavigationInner = styled.div`
     width: 100%;
 `;
 
-const NavigationList = styled.div`
-    display: flex;
-    width: 100%;
+const NavigationList = styled(Columns)`
+    display: none;
+
+    @media ${p => p.theme.bp.l} {
+        display: flex;
+    }
 `;
 
 const NavigationLinkWrapper = styled.div`
@@ -38,22 +39,20 @@ export const Navigation: React.FC = () => {
             <NavigationContent>
                 <NavigationInner>
                     <NavigationLink action="/">Amos Cimpean</NavigationLink>
-                    <Columns columns={8}>
-                        <NavigationList>
-                            <NavigationLinkWrapper>
-                                <NavigationLink action="/">Home</NavigationLink>
-                            </NavigationLinkWrapper>
-                            <NavigationLinkWrapper>
-                                <NavigationLink action="/">About Me</NavigationLink>
-                            </NavigationLinkWrapper>
-                            <NavigationLinkWrapper>
-                                <NavigationLink action="/">Selected Work</NavigationLink>
-                            </NavigationLinkWrapper>
-                            <NavigationLinkWrapper>
-                                <NavigationLink action="/">Contact</NavigationLink>
-                            </NavigationLinkWrapper>
-                        </NavigationList>
-                    </Columns>
+                    <NavigationList columns={8}>
+                        <NavigationLinkWrapper>
+                            <NavigationLink action="/">Home</NavigationLink>
+                        </NavigationLinkWrapper>
+                        <NavigationLinkWrapper>
+                            <NavigationLink action="/">About Me</NavigationLink>
+                        </NavigationLinkWrapper>
+                        <NavigationLinkWrapper>
+                            <NavigationLink action="/">Selected Work</NavigationLink>
+                        </NavigationLinkWrapper>
+                        <NavigationLinkWrapper>
+                            <NavigationLink action="/">Contact</NavigationLink>
+                        </NavigationLinkWrapper>
+                    </NavigationList>
                 </NavigationInner>
             </NavigationContent>
         </NavigationWrapper>

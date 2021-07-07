@@ -5,9 +5,10 @@ import { GetStaticProps } from "next";
 import { getProjectsOverview } from "../app/lib/api/data/projects";
 import { Projects } from "../app/type/projects";
 import { Content } from "../app/css/content";
+import { Opener } from "../app/components/opener/Opener";
 
 const HomeWrapper = styled.div`
-    padding-top: 10rem;
+    padding-top: 25rem;
 `;
 
 interface HomeProps {
@@ -18,11 +19,12 @@ const Home: React.FC<HomeProps> = ({ projects }) => {
     return (
         <HomeWrapper>
             <Content>
-                {projects.map(project => (
-                    <Link key={project.sys.id} href={"/project/" + project.slug}>
-                        {project.title}
-                    </Link>
-                ))}
+                <Opener />
+                {/*{projects.map(project => (*/}
+                {/*    <Link key={project.sys.id} href={"/project/" + project.slug}>*/}
+                {/*        {project.title}*/}
+                {/*    </Link>*/}
+                {/*))}*/}
             </Content>
         </HomeWrapper>
     );

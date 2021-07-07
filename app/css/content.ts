@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Content = styled.div<{ breakMobile?: boolean; breakDesktop?: boolean }>`
-    margin: 0 2rem;
-    width: calc(100% - 4rem);
+    margin: 0 3rem;
+    width: calc(100% - 6rem);
 
     @media ${p => p.theme.bp.l} {
         max-width: 160rem;
@@ -21,6 +21,10 @@ export const aspectRatio = (value: number) => `
 
 type ColumnsRange = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
-export const Columns = styled.div<{ columns: ColumnsRange }>`
-    width: ${p => (100 / 12) * p.columns}%;
+export const Columns = styled.div<{ columns: ColumnsRange; breakMobile?: boolean }>`
+    width: 100%;
+
+    @media ${p => p.theme.bp.l} {
+        width: ${p => (100 / 12) * p.columns}%;
+    }
 `;

@@ -20,6 +20,15 @@ const SiteNavigation = styled.div`
     top: 0;
     left: 0;
     width: 100%;
+    transform: translate3d(0, -100%, 0);
+    animation: nav-reveal 1s ${p => p.theme.ease} forwards ${p => p.theme.delay};
+    will-change: transform;
+
+    @keyframes nav-reveal {
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
 `;
 
 export const Template: React.FC = ({ children }) => {

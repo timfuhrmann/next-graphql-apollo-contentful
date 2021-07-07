@@ -12,6 +12,11 @@ export const theme = {
         xxl: "screen and (min-width: 2000px)",
     },
     //endregion
+
+    //region Other
+    ease: "cubic-bezier(0.85, 0, 0.15, 1)",
+    delay: "0.5s",
+    //endregion
 };
 
 type Theme = typeof theme;
